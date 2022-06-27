@@ -2,7 +2,7 @@ import os
 import json
 from pathlib import Path
 import random
-from torch.utils.data import Dataset
+# from torch.utils.data import Dataset
 
 from .data_utils import insert_rests, rectify_times, rectify_note_durs, rectify_chord_durs, get_max_time
 
@@ -11,7 +11,7 @@ from config import config
 from slugify import slugify
 
 
-class NottinghamDataset(Dataset):
+class NottinghamDataset: #(Dataset):
     def __init__(self, aug=False, logger=None, debug=False):
         ### the min interval of duration, assume is 12
         self.names = []
