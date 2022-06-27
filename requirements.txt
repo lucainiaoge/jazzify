@@ -1,0 +1,11 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+json5=0.9.6=pyhd3eb1b0_0
+jsonpickle=1.5.2=pypi_0
+jsonschema=3.2.0=pyhd3eb1b0_2
+music21=7.1.0=pypi_0
+numpy=1.21.4=pypi_0
+numpy-base=1.21.2=py38h0829f74_0
+python-slugify=5.0.2=pypi_0
+pytorch=1.10.0=py3.8_cuda11.3_cudnn8_0
+pytorch-mutex=1.0=cuda

@@ -1,4 +1,3 @@
-import collections
 import music21
 from music21 import harmony
 from rules.pitch_names import PITCH_NAME_2_NUM, PITCH_NUM_2_NAME
