@@ -39,7 +39,7 @@ def insert_rests(note_track):
     return note_track
 
 def note_chord_to_midi(
-    note_list, chord_list, time_signature_list, out_path="test.mid", resolution=24
+    note_list, chord_list, time_signature_list, out_path="test.mid", resolution=24, tempo = 96
 ):
 #     print(note_list)
     part_notes = music21.stream.Part()
@@ -75,14 +75,15 @@ def note_chord_to_midi(
         part_chords.insert(pos, music21.meter.TimeSignature(value))
 
     score = music21.stream.Score([part_notes, part_chords])
-
+    score.append(music21.tempo.MetronomeMark(tempo))
+    
     mf = music21.midi.translate.streamToMidiFile(score)
     mf.open(out_path, "wb")
     mf.write()
     mf.close()
 
 def notes_chord_to_midi(
-    list_of_note_list, chord_list, time_signature_list, out_path="test.mid", resolution=24
+    list_of_note_list, chord_list, time_signature_list, out_path="test.mid", resolution=24, tempo = 96
 ):
     N_note_list = len(list_of_note_list)
     parts_notes = [music21.stream.Part() for _ in range(N_note_list)]
@@ -127,6 +128,7 @@ def notes_chord_to_midi(
         part_chords.insert(pos, music21.meter.TimeSignature(value))
     
     score = music21.stream.Score(parts_notes + [part_chords])
+    score.append(music21.tempo.MetronomeMark(tempo))
 
     mf = music21.midi.translate.streamToMidiFile(score)
     mf.open(out_path, "wb")
