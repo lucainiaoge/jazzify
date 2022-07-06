@@ -1,15 +1,15 @@
 # Jazzify
 
-This is an open-source rule-based jazzification system. Given a melody track and a chord track, `Jazzify` is able to transfer it into swing jazz style.
+This is an open-source rule-based jazzification system. Given a melody track and a chord track, `Jazzify` is able to transfer it into swing jazz style or bossa nova style.
 
 `Jazzify` is rule-based. Apart from its capability to jazzify non-jazz piece, it can also serve as an engine of computational jazz music theory. `Jazzify` is able to accomplish tasks including chord-symbol identification, key detection, chord extension, chord-to-scale, chord-to-voicing, walking-bass generation.
 
-As a bonus, `Jazzify` provides a swingified version of [Nottingham Dataset](https://ifdo.ca/~seymour/nottingham/nottingham.html). `Jazzify` takes the input in [muspy](https://muspy.com/ "muspy")'s format (json). The swingified Nottingham Dataset is saved in ```nottingham_swingified_results.rar```.
+As a bonus, `Jazzify` provides a swingified and a bossaified version of [Nottingham Dataset](https://ifdo.ca/~seymour/nottingham/nottingham.html). `Jazzify` takes the input in [muspy](https://muspy.com/ "muspy")'s format (json). The swingified Nottingham Dataset is saved in ```nottingham_swingified.zip```, and the bossaified Nottingham Dataset is saved in ```nottingham_bossaified.zip```..
 
 ## Run the Code
 
 1. Unzip the muspy-formatted Nottingham Dataset in the `data` directory
-2. `python jazzify_nottingham.py [out_dir]`
+2. `python jazzify_nottingham.py [out_dir] [style]`, where `[style]` chosen from "swing" and "bossa".
 
 ## Features
 
@@ -59,7 +59,7 @@ Input piece should in dictionary format
 }
 ```
 
-The json files in Nottingham Swingified are in format
+The json files in Nottingham Swingified/Bossaified are in format
 ```
 {
 	"metadata": {
